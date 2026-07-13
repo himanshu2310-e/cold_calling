@@ -1,3 +1,5 @@
+'use client';
+
 import { use, useState, useRef, useEffect } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
