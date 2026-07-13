@@ -1,0 +1,28 @@
+[
+  {
+    "_id": "usr-admin-01",
+    "firstName": "System",
+    "lastName": "Administrator",
+    "email": "admin@coldconnect.com",
+    "password": "$2a$10$M2fRpr5U/lcxvmJ4dijyXevNMJnjR.P.f5OZ2L1Jt82CzeWf3wNCq",
+    "role": "admin",
+    "phone": "+1 555-0100",
+    "status": "active",
+    "isOnline": false,
+    "createdAt": "2026-07-12T07:35:38.262Z",
+    "updatedAt": "2026-07-12T07:35:38.264Z"
+  },
+  {
+    "_id": "usr-agent-01",
+    "firstName": "Sarah",
+    "lastName": "Jenkins",
+    "email": "agent@coldconnect.com",
+    "password": "$2a$10$M2fRpr5U/lcxvmJ4dijyXeErm22ZZbEV8Axq9rONkQqYth07ozAyK",
+    "role": "agent",
+    "phone": "+1 555-0101",
+    "status": "active",
+    "isOnline": false,
+    "createdAt": "2026-07-12T07:35:38.264Z",
+    "updatedAt": "2026-07-12T07:35:38.264Z"
+  }
+]

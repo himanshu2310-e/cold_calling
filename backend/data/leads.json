@@ -1,0 +1,61 @@
+[
+  {
+    "_id": "ld-01",
+    "fullName": "Sarah Jenkins",
+    "phone": "+1 555-0199",
+    "email": "sarah.j@techcorp.com",
+    "company": "TechCorp Solutions",
+    "industry": "Software",
+    "website": "https://techcorp.com",
+    "linkedin": "https://linkedin.com/in/sarah-j",
+    "city": "San Francisco",
+    "state": "CA",
+    "country": "USA",
+    "leadSource": "website",
+    "assignedTo": "usr-agent-01",
+    "createdBy": "usr-admin-01",
+    "status": "not_called",
+    "priority": "hot",
+    "callCount": 0,
+    "recordingCount": 0,
+    "notesCount": 0,
+    "tags": [
+      "enterprise",
+      "high-value"
+    ],
+    "isFavorite": true,
+    "isPinned": false,
+    "aiScore": 85,
+    "createdAt": "2026-07-12T07:35:38.266Z",
+    "updatedAt": "2026-07-12T07:35:38.266Z"
+  },
+  {
+    "_id": "ld-02",
+    "fullName": "Michael Chen",
+    "phone": "+1 555-0188",
+    "email": "mchen@biohealth.org",
+    "company": "BioHealth Labs",
+    "industry": "Healthcare",
+    "website": "https://biohealth.org",
+    "city": "Boston",
+    "state": "MA",
+    "country": "USA",
+    "leadSource": "cold_outreach",
+    "assignedTo": "usr-agent-01",
+    "createdBy": "usr-admin-01",
+    "status": "interested",
+    "priority": "vip",
+    "callCount": 2,
+    "recordingCount": 1,
+    "notesCount": 1,
+    "tags": [
+      "healthcare",
+      "lead-list"
+    ],
+    "isFavorite": false,
+    "isPinned": true,
+    "aiScore": 92,
+    "createdAt": "2026-07-12T07:35:38.266Z",
+    "updatedAt": "2026-07-12T07:35:38.266Z"
+  }
+]
