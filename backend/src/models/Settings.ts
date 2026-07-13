@@ -36,7 +36,6 @@ const settingsSchema = new Schema<ISettingsDocument>(
   }
 );
 
-settingsSchema.index({ key: 1 });
 
 const Settings: Model<ISettingsDocument> = mongoose.model<ISettingsDocument>(
   'Settings',

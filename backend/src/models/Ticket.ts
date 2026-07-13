@@ -65,7 +65,6 @@ const ticketSchema = new Schema<ITicketDocument>(
   }
 );
 
-ticketSchema.index({ ticketId: 1 });
 ticketSchema.index({ user: 1, createdAt: -1 });
 
 const Ticket: Model<ITicketDocument> = mongoose.model<ITicketDocument>(
