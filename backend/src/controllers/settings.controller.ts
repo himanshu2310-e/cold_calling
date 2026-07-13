@@ -1,24 +1,16 @@
 // ============================================
 // Settings Controller
 // ============================================
-import { Request as ExpressRequest, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import * as settingsService from '../services/settings.service';
 import { successResponse, ApiError } from '../utils/apiResponse';
-
-interface AuthenticatedRequest extends ExpressRequest {
-  user?: {
-    id: string;
-    role: string;
-  };
-  params: Record<string, string>;
-}
 
 /**
  * GET /api/v1/settings/:key
  */
-export const getSettingByKey = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+export const getSettingByKey = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { key } = req.params;
+    const key = req.params.key as string;
     const setting = await settingsService.getSetting(key);
 
     if (!setting) {
@@ -48,9 +40,9 @@ export const getSettingByKey = async (req: AuthenticatedRequest, res: Response, 
 /**
  * PUT /api/v1/settings/:key
  */
-export const updateSettingByKey = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+export const updateSettingByKey = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { key } = req.params;
+    const key = req.params.key as string;
     const { value } = req.body;
     const userId = req.user?.id;
 

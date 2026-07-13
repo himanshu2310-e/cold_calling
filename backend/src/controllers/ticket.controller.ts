@@ -1,23 +1,14 @@
 // ============================================
 // Support Ticket Controller
 // ============================================
-import { Request as ExpressRequest, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import * as ticketService from '../services/ticket.service';
 import { successResponse, ApiError } from '../utils/apiResponse';
-
-interface AuthenticatedRequest extends ExpressRequest {
-  user?: {
-    id: string;
-    role: string;
-  };
-  query: Record<string, string>;
-  params: Record<string, string>;
-}
 
 /**
  * POST /api/v1/tickets
  */
-export const createTicket = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+export const createTicket = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.user?.id;
     if (!userId) {
@@ -50,7 +41,7 @@ export const createTicket = async (req: AuthenticatedRequest, res: Response, nex
 /**
  * GET /api/v1/tickets
  */
-export const getTickets = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+export const getTickets = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.user?.id;
     const userRole = req.user?.role;
@@ -72,9 +63,9 @@ export const getTickets = async (req: AuthenticatedRequest, res: Response, next:
 /**
  * PUT /api/v1/tickets/:ticketId/status
  */
-export const updateTicketStatus = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+export const updateTicketStatus = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { ticketId } = req.params;
+    const ticketId = req.params.ticketId as string;
     const { status } = req.body;
     const userRole = req.user?.role;
 
