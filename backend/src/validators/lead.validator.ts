@@ -22,6 +22,7 @@ export const createLeadSchema = z.object({
   state: z.string().trim().optional().or(z.literal('')),
   country: z.string().trim().optional().or(z.literal('')),
   leadSource: z.string().trim().optional().or(z.literal('')),
+  description: z.string().trim().max(1000).optional().or(z.literal('')),
   assignedTo: z.string({ required_error: 'Assigned user is required' }).min(1, 'Assigned user is required'),
   status: z
     .enum([

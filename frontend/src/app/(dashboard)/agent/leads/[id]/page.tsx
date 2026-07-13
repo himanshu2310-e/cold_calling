@@ -230,6 +230,12 @@ export default function AgentLeadDetailPage({ params }: { params: Promise<{ id: 
                 </div>
               ))}
             </div>
+            {lead.description && (
+              <div className="mt-4 p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/40">
+                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider block mb-1">Description</span>
+                <p className="text-xs text-zinc-300 whitespace-pre-wrap leading-relaxed">{lead.description}</p>
+              </div>
+            )}
           </div>
 
           <div className="rounded-2xl border p-5 space-y-3" style={{ background: '#141418', borderColor: '#1E1E22' }}>

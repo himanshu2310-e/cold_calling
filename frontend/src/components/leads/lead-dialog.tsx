@@ -33,6 +33,7 @@ const leadFormSchema = z.object({
     'follow_up', 'converted', 'invalid_number', 'duplicate',
   ]),
   priority: z.enum(['hot', 'warm', 'cold', 'vip', 'high', 'medium', 'low']),
+  description: z.string().optional(),
   tagsInput: z.string().optional(),
 });
 
@@ -84,6 +85,7 @@ export default function LeadDialog({
       assignedTo: '',
       status: 'not_called',
       priority: 'medium',
+      description: '',
       tagsInput: '',
     },
   });
@@ -116,6 +118,7 @@ export default function LeadDialog({
           assignedTo: typeof lead.assignedTo === 'object' ? lead.assignedTo._id : lead.assignedTo || '',
           status: lead.status,
           priority: lead.priority,
+          description: lead.description || '',
           tagsInput: lead.tags?.join(', ') || '',
         });
       } else {
@@ -134,6 +137,7 @@ export default function LeadDialog({
           assignedTo: isAdmin ? '' : currentUserId,
           status: 'not_called',
           priority: 'medium',
+          description: '',
           tagsInput: '',
         });
       }
@@ -352,6 +356,19 @@ export default function LeadDialog({
             </div>
 
             {/* Row 7 */}
+            <div className="grid grid-cols-1 gap-4">
+              <div className="space-y-1">
+                <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider block">Description</label>
+                <textarea
+                  placeholder="Type lead description, context, or special requirements here..."
+                  rows={2}
+                  {...register('description')}
+                  className="input-field py-2.5 resize-none text-xs"
+                />
+              </div>
+            </div>
+
+            {/* Row 8 */}
             <div className="space-y-1">
               <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider block">Tags (comma-separated)</label>
               <input

@@ -325,6 +325,12 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
                 </div>
               ))}
             </div>
+            {lead.description && (
+              <div className="mt-4 p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/40">
+                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider block mb-1">Description</span>
+                <p className="text-xs text-zinc-300 whitespace-pre-wrap leading-relaxed">{lead.description}</p>
+              </div>
+            )}
           </div>
 
           {/* Sidebar info */}

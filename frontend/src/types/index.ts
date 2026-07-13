@@ -40,6 +40,7 @@ export interface ILead {
   state?: string;
   country?: string;
   leadSource?: string;
+  description?: string;
   assignedTo?: IUser | string;
   status: LeadStatus;
   priority: LeadPriority;

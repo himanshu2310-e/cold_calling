@@ -16,6 +16,7 @@ export interface ILeadDocument extends Document {
   state?: string;
   country?: string;
   leadSource?: string;
+  description?: string;
   assignedTo: mongoose.Types.ObjectId;
   createdBy: mongoose.Types.ObjectId;
   status: string;
@@ -80,6 +81,10 @@ const leadSchema = new Schema<ILeadDocument>(
       trim: true,
     },
     leadSource: {
+      type: String,
+      trim: true,
+    },
+    description: {
       type: String,
       trim: true,
     },
