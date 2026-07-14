@@ -6,7 +6,7 @@ import api from './api';
 const authService = {
   login: async (payload: any) => {
     const res = await api.post('/auth/login', payload);
-    return res.data;
+    return res;
   },
   logout: async () => {
     const res = await api.post('/auth/logout');

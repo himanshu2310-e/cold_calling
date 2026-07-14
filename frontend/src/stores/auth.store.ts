@@ -20,7 +20,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   isInitialized: false,
   login: async (payload) => {
     const res = await authService.login(payload);
-    const { accessToken, user } = res.data;
+    const { accessToken, user } = res.data.data;
     if (typeof window !== 'undefined') {
       localStorage.setItem('accessToken', accessToken);
     }
